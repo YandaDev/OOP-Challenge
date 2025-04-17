@@ -5,11 +5,12 @@ class Pet:
         self.energy = 5
         self.happiness = 5
         self.tricks = []
+        self.count = 0 # Number of plays until a new trick is learned
 
     # Feed the pet to reduce hunger and increase happiness
     def eat(self):
         print(f"🍽️{self.name} is eating...")
-        self.hunger = max(self.hunger - 3, 0)
+        self.hunger = max(self.hunger - 3, 0) 
         self.happiness = min(self.happiness + 1, 10)
 
     # Let the pet sleep to restore energy
@@ -23,6 +24,12 @@ class Pet:
         self.energy = max(self.energy - 2, 0)
         self.happiness = min(self.happiness + 2, 10)
         self.hunger = min(self.hunger + 1, 10)
+        self.count += 1
+
+        if self.count % 10 == 0: # Every 10 plays, the pet learns a new trick
+            new_trick = f"Trick {len(self.tricks) + 1}"
+            self.tricks.append(new_trick)
+            print(f"{self.name} has learned a new tricks called {new_trick}.")
 
      # Teach the pet a new trick if it has enough energy
     def train(self, trick):
