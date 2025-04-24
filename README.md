@@ -57,8 +57,7 @@ Use max() and min() to keep values between 0 and 10.
 Think about edge cases like trying to play when energy is 0.
 
 🏁 Submission
-Deadline: [Set your date]
 
-Submission format: clone / fork this repo
+Submission format: clone/fork this repo
 
 Bonus points for creativity (custom actions, emojis, pet types, etc.)
